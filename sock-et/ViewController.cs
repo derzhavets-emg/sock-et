@@ -18,7 +18,7 @@ namespace socket
             base.ViewDidLoad();
 
             // Do any additional setup after loading the view.
-            ClickedLabel.StringValue = "Button has not been clicked yet";
+            //ClickedLabel.StringValue = "Button has not been clicked yet";
         }
 
         public override NSObject RepresentedObject
@@ -34,9 +34,9 @@ namespace socket
             }
         }
 
-        partial void ClickButton(NSObject sender)
-        {
-            ClickedLabel.StringValue = string.Format("The button has been clicked {0} time{1}.", ++clickedNumber, (clickedNumber < 2) ? "" : "s");
-        }
+        //partial void ClickButton(NSObject sender)
+        //{
+        //    ClickedLabel.StringValue = string.Format("The button has been clicked {0} time{1}.", ++clickedNumber, (clickedNumber < 2) ? "" : "s");
+        //}
     }
 }

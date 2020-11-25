@@ -13,16 +13,49 @@ namespace socket
 	partial class ViewController
 	{
 		[Outlet]
-		AppKit.NSTextField ClickedLabel { get; set; }
+		AppKit.NSTextField ClientsInput { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField IpInput { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField MessageInput { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField PortInput { get; set; }
+
+		[Action ("BtnLoadTemplateStatus:")]
+		partial void BtnLoadTemplateStatus (Foundation.NSObject sender);
+
+		[Action ("BtnSendMessage:")]
+		partial void BtnSendMessage (Foundation.NSObject sender);
+
+		[Action ("BtnStartServer:")]
+		partial void BtnStartServer (Foundation.NSObject sender);
 
 		[Action ("ClickButton:")]
 		partial void ClickButton (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (ClickedLabel != null) {
-				ClickedLabel.Dispose ();
-				ClickedLabel = null;
+			if (IpInput != null) {
+				IpInput.Dispose ();
+				IpInput = null;
+			}
+
+			if (PortInput != null) {
+				PortInput.Dispose ();
+				PortInput = null;
+			}
+
+			if (ClientsInput != null) {
+				ClientsInput.Dispose ();
+				ClientsInput = null;
+			}
+
+			if (MessageInput != null) {
+				MessageInput.Dispose ();
+				MessageInput = null;
 			}
 		}
 	}
