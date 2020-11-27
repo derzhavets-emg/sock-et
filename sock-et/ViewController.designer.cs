@@ -13,6 +13,9 @@ namespace socket
 	partial class ViewController
 	{
 		[Outlet]
+		AppKit.NSButton BtnStartServerText { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField ClientsInput { get; set; }
 
 		[Outlet]
@@ -23,6 +26,9 @@ namespace socket
 
 		[Outlet]
 		AppKit.NSTextField PortInput { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField ReceivedMesages { get; set; }
 
 		[Action ("BtnLoadTemplateStatus:")]
 		partial void BtnLoadTemplateStatus (Foundation.NSObject sender);
@@ -38,6 +44,16 @@ namespace socket
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (BtnStartServerText != null) {
+				BtnStartServerText.Dispose ();
+				BtnStartServerText = null;
+			}
+
+			if (ClientsInput != null) {
+				ClientsInput.Dispose ();
+				ClientsInput = null;
+			}
+
 			if (IpInput != null) {
 				IpInput.Dispose ();
 				IpInput = null;
@@ -48,14 +64,14 @@ namespace socket
 				PortInput = null;
 			}
 
-			if (ClientsInput != null) {
-				ClientsInput.Dispose ();
-				ClientsInput = null;
-			}
-
 			if (MessageInput != null) {
 				MessageInput.Dispose ();
 				MessageInput = null;
+			}
+
+			if (ReceivedMesages != null) {
+				ReceivedMesages.Dispose ();
+				ReceivedMesages = null;
 			}
 		}
 	}
