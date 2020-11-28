@@ -36,7 +36,7 @@ namespace socket
 
         private void HandleNewMessage(object sender, string e)
         {
-            InvokeOnMainThread(() => ReceivedMesages.StringValue = e + " \n");
+            InvokeOnMainThread(() => ReceivedMsgText.Value += $"{e} \n");
         }
 
         private void HandleConnectionStatus(object sender, bool connected)
@@ -90,7 +90,11 @@ namespace socket
 
         partial void BtnLoadTemplateStatus(NSObject sender)
         {
-            MessageInput.StringValue = "{\"status\":1,\"temperature\":\"36.6\"}";
+            InvokeOnMainThread(() =>
+            {
+                ReceivedMsgText.Value += "TEST \n";
+
+            });
         }
 
 
@@ -199,7 +203,6 @@ namespace socket
             {
                 Console.WriteLine("Socket closed, AcceptCallback interrupted");
             }
-
             // Signal the main thread to continue.  
             allDone.Set();
 
@@ -222,7 +225,8 @@ namespace socket
 
                 if (bytesRead > 0)
                 {
-                    // There  might be more data, so store the data received so far.  
+                    // There  might be more data, so store the data received so far.
+
                     state.sb.Append(Encoding.ASCII.GetString(
                         state.buffer, 0, bytesRead));
 
@@ -232,6 +236,9 @@ namespace socket
 
                     // send content to UI
                     OnMessageReceived?.Invoke(null, content);
+
+                    state.sb.Clear();
+
 
                     //if (content.IndexOf("<EOF>") > -1)
                     //{

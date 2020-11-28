@@ -28,7 +28,10 @@ namespace socket
 		AppKit.NSTextField PortInput { get; set; }
 
 		[Outlet]
-		AppKit.NSTextField ReceivedMesages { get; set; }
+		AppKit.NSTextField ReceivedMessagesText { get; set; }
+
+		[Outlet]
+		AppKit.NSTextView ReceivedMsgText { get; set; }
 
 		[Action ("BtnLoadTemplateStatus:")]
 		partial void BtnLoadTemplateStatus (Foundation.NSObject sender);
@@ -69,9 +72,14 @@ namespace socket
 				MessageInput = null;
 			}
 
-			if (ReceivedMesages != null) {
-				ReceivedMesages.Dispose ();
-				ReceivedMesages = null;
+			if (ReceivedMessagesText != null) {
+				ReceivedMessagesText.Dispose ();
+				ReceivedMessagesText = null;
+			}
+
+			if (ReceivedMsgText != null) {
+				ReceivedMsgText.Dispose ();
+				ReceivedMsgText = null;
 			}
 		}
 	}

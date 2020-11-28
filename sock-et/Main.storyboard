@@ -795,15 +795,6 @@
                                     <action selector="BtnLoadTemplateStatus:" target="XfG-lQ-9wD" id="Jr5-uU-obQ"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQA-sG-E48">
-                                <rect key="frame" x="413" y="82" width="380" height="97"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Enter your message" drawsBackground="YES" id="E0O-v3-U7b">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AV2-WH-gaE">
                                 <rect key="frame" x="407" y="30" width="129" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -815,21 +806,48 @@
                                     <action selector="BtnSendMessage:" target="XfG-lQ-9wD" id="cyK-Gf-gEL"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-uj-fsn">
-                                <rect key="frame" x="413" y="237" width="380" height="110"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5v-lk-HPt">
+                                <rect key="frame" x="411" y="355" width="124" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="qMj-Cc-iyJ">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Received messages" id="5M2-2a-Ved">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5v-lk-HPt">
-                                <rect key="frame" x="411" y="355" width="118" height="16"/>
+                            <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="396-q2-SZc">
+                                <rect key="frame" x="413" y="218" width="380" height="129"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Low-Fh-uXT">
+                                    <rect key="frame" x="0.0" y="0.0" width="365" height="129"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="kji-aa-jMD">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="129"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="365" height="129"/>
+                                            <size key="maxSize" width="385" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="iUL-wT-ogV">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="QGJ-ww-gcc">
+                                    <rect key="frame" x="365" y="0.0" width="15" height="129"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-Z8-jXB">
+                                <rect key="frame" x="413" y="82" width="380" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Received message" id="5M2-2a-Ved">
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Enter message" drawsBackground="YES" id="iKn-vl-SPh">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -839,9 +857,9 @@
                         <outlet property="BtnStartServerText" destination="Cij-k9-XWH" id="M0c-GU-Xfz"/>
                         <outlet property="ClientsInput" destination="Smi-Xa-32e" id="VTM-qp-PMB"/>
                         <outlet property="IpInput" destination="N5H-Id-YQZ" id="4LI-jz-eWJ"/>
-                        <outlet property="MessageInput" destination="TQA-sG-E48" id="Pre-zD-zfV"/>
+                        <outlet property="MessageInput" destination="aQe-Z8-jXB" id="JbK-kf-Hyf"/>
                         <outlet property="PortInput" destination="B0D-pM-5eT" id="AGk-aD-8pc"/>
-                        <outlet property="ReceivedMesages" destination="n1c-uj-fsn" id="WCm-Oz-daZ"/>
+                        <outlet property="ReceivedMsgText" destination="kji-aa-jMD" id="2zk-9q-VWu"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
